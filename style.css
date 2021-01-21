@@ -1,0 +1,315 @@
+/* quick reset start*/
+html {
+  font-size: 16px;
+  height: 100%;
+  width: 100%;
+}
+
+/* prettier-ignore*/
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+/* prettier-ignore*/
+body, h1, h2, h4, h3, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: 500;
+  height: 100%;
+}
+
+/* prettier-ignore*/
+img {
+
+  height: auto;
+}
+/* quick reset end*/
+
+body {
+  height: 100%;
+  margin: 0;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 70px;
+  /*bg gradient start*/
+  background: rgb(0, 199, 128);
+  background: linear-gradient(
+    112deg,
+    rgba(0, 199, 128, 1) 0%,
+    rgba(0, 185, 152, 1) 13%,
+    rgba(0, 169, 182, 1) 31%,
+    rgba(0, 163, 177, 1) 40%,
+    rgba(0, 158, 174, 1) 47%,
+    rgba(0, 117, 142, 1) 69%,
+    rgba(0, 99, 128, 1) 83%,
+    rgba(1, 65, 102, 1) 100%
+  );
+  font-size: 12px;
+  /*bg gradient end*/
+  overflow-x: hidden;
+}
+/* modifies everything in the content window*/
+#wrapper {
+  width: 80vw;
+  max-width: 750px;
+  margin-left: 13vw;
+  margin-right: 13vw;
+  margin-bottom: 20vw;
+  background-color: white;
+  border-radius: 7px;
+}
+
+/*prettier-ignore*/
+a, a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* name + title header start*/
+#header {
+  padding-top: 25px;
+  white-space: nowrap;
+}
+
+.div-header {
+  display: flex;
+  justify-content: center;
+  padding: 2px;
+}
+
+h1 {
+  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 3.6em;
+  margin: 5px;
+  max-width: 200px;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Fjalla One', sans-serif;
+  text-align: center;
+  max-width: 300px;
+  text-transform: uppercase;
+}
+
+/*line between h1 & h2 + keyframes animation*/
+.hrMove {
+  height: 2px;
+  max-width: 160px;
+  animation-name: stretch;
+  animation-duration: 0.75s;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-iteration-count: 1;
+  animation-play-state: running;
+  margin: 0 auto;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(0);
+    background-color: black;
+  }
+
+  100% {
+    background-color: black;
+  }
+}
+/* name + title header end*/
+
+/*Nav Bar start*/
+/*hide checkbox (toggle on/off)*/
+input[type='checkbox'] {
+  display: none;
+}
+
+/*formatting the input labels*/
+.wrap-collapsible {
+  margin: 1.2rem 0;
+}
+
+.lbl-toggle,
+.lbl-toggle2,
+.lbl-toggle3 {
+  display: block;
+  min-width: auto;
+  max-width: 25vw;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: bold;
+  font-family: 'Fjalla One', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 1rem;
+  color: black;
+  background: white;
+  cursor: pointer;
+  border-radius: 7px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle3 {
+  margin-bottom: 10px;
+}
+
+.lbl-toggle:hover,
+.lbl-toggle2:hover,
+.lbl-toggle3:hover {
+  color: rgba(0, 158, 174, 0.7);
+}
+.lbl-toggle::before,
+.lbl-toggle2::before,
+.lbl-toggle3::before {
+  content: ' ';
+  display: inline-block;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: 0.7rem;
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+.toggle:checked + .lbl-toggle::before,
+.toggle2:checked + .lbl-toggle2::before,
+.toggle3:checked + .lbl-toggle3::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+.collapsible-content,
+.collapsible-content2,
+.collapsible-content3 {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.65s ease-in-out;
+}
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 1000px;
+}
+
+.toggle2:checked + .lbl-toggle2 + .collapsible-content2 {
+  max-height: 1000px;
+}
+
+.toggle3:checked + .lbl-toggle3 + .collapsible-content3 {
+  max-height: 1000px;
+}
+
+.collapsible-content .content-inner,
+.collapsible-content2 .content-inner2,
+.collapsible-content3 .content-inner3 {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  background: rgb(0, 199, 128);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 199, 128, 0) 32%,
+    rgba(0, 185, 152, 0.04805672268907568) 41%,
+    rgba(0, 169, 182, 0.09567577030812324) 60%,
+    rgba(0, 163, 177, 0.14889705882352944) 85%,
+    rgba(0, 158, 174, 0.19931722689075626) 100%
+  );
+  border-bottom: 1px solid rgba(0, 105, 255, 0.45);
+  border-radius: 7px;
+  padding: 0.5rem 1rem;
+  font-family: 'Mulish', sans-serif;
+}
+
+.collapsible-content p,
+.collapsible-content2 p,
+.collapsible-content3 p {
+  margin-bottom: 0.5;
+}
+
+.connectText {
+  display: flex;
+  justify-content: center;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+}
+
+.socials img {
+  margin: 5px;
+  width: 3vw;
+  max-width: 3vw;
+}
+
+.collapsible-content2 img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.content-inner2 {
+  display: flex;
+  text-align: center;
+}
+
+.column {
+  flex: 50%;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  margin-right: 25px;
+  color: rgba(51, 51, 51, 0.6);
+  font-size: smaller;
+}
+
+.text {
+  margin: 10px;
+}
+
+.selfie {
+  position: relative;
+  width: 10vw;
+  max-width: 100px;
+  float: right;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.overlay {
+  position: absolute;
+  border-radius: 50%;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: #014166;
+}
+
+.selfie:hover .overlay {
+  opacity: 0.8;
+}
+
+.hoverText {
+  color: white;
+  font-size: 85%;
+  position: absolute;
+  text-align: center;
+  text-transform: uppercase;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  font-family: 'Fjalla One', sans-serif;
+}
