@@ -1,4 +1,4 @@
-//import;
+import home1 from "../img/home1.png";
 
 function AboutTitle() {
   return (
@@ -19,7 +19,7 @@ function AboutTitle() {
         <button> LINK </button>
       </div>
       <div className="image"> 
-        <img src="" alt="landing page profile pic"/>
+        <img src={home1} alt="landing page profile pic"/>
       </div>
     </div>
   )

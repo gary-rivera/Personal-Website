@@ -1,10 +1,14 @@
 import AboutTitle from '../components/AboutTitle';
+import ServicesSection from '../components/ServicesSection';
+import FaqSection from '../components/FaqSection';
 
 function AboutMe() {
   return (
-    <div> 
+    <> 
       <AboutTitle />
-    </div>
+      <ServicesSection />
+      <FaqSection/>
+    </>
   );
 }
 
