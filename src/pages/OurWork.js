@@ -8,7 +8,7 @@ import goodtimes from '../img/goodtimes-small.png';
 
 //animations
 import { motion } from 'framer-motion';
-import { pageAnimation } from "../animation"
+import { fade, photoAnim, pageAnimation, lineAnim } from "../animation"
 
 function OurWork() {
   return (
@@ -20,25 +20,41 @@ function OurWork() {
     style={{background: "#fff"}}
 
     > 
+      <Frame1></Frame1>
+      <Frame2></Frame2>
+      <Frame3></Frame3>
+      <Frame4></Frame4>
       <Movie>
-        <h2>The Athlete</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-athlete">
-          <img src={athlete} alt="athlete"/>
+          <Hide>
+            <motion.img 
+              variants={photoAnim} 
+              src={athlete} 
+              alt="athlete"/>
+          </Hide>
         </Link>
       </Movie>
       <Movie>
-        <h2>The Racer</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>The Racer</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/the-racer">
-          <img src={racer} alt="racer"/>
+          <motion.img 
+            variants={photoAnim}
+            src={racer} alt="racer"
+          />
         </Link>
       </Movie>
       <Movie>
-        <h2>Good Times</h2>
-        <div className="line"></div>
+        <motion.h2 variants={fade}>Good Times</motion.h2>
+        <motion.div variants={lineAnim} className="line"></motion.div>
         <Link to="/work/good-times">
-          <img src={goodtimes} alt="good times"/>
+          <motion.img 
+            variants={photoAnim}
+            src={goodtimes} 
+            alt="good times"
+          />
         </Link>
       </Movie>
     </Work>
@@ -57,7 +73,7 @@ const Movie = styled.div`
   padding-bottom: 10rem;
   .line {
     height: 0.5rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 3rem;
   }
   img {
@@ -65,6 +81,30 @@ const Movie = styled.div`
     height: 70vh;
     object-fit: cover;
   }
+`;
+
+const Hide = styled.div`
+  overflow: hidden;
+`;
+
+const Frame1= styled(motion.div)`
+  position:fixed;
+  left: 0;
+  top 10%;
+  width: 100%;
+  height: 100vh;
+  background: fffebf;
+  z-index: 2;
+`;
+
+const Frame2 = styled(Frame1)`
+  background: #ff8efb;
+`;
+const Frame3 = styled(Frame1)`
+  background: #8ed2ff;
+`;
+const Frame4 = styled(Frame1)`
+  background: #8effa0;
 `;
 
 export default OurWork;

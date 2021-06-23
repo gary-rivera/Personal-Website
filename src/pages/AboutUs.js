@@ -5,7 +5,7 @@ import FaqSection from '../components/FaqSection';
 import { motion } from 'framer-motion';
 import { pageAnimation } from "../animation"
 
-function AboutMe() {
+function AboutUs() {
   return (
     <motion.div 
       variants={pageAnimation}
@@ -20,4 +20,4 @@ function AboutMe() {
   );
 }
 
-export default AboutMe;
+export default AboutUs;

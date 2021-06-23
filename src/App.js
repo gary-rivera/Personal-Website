@@ -9,7 +9,7 @@ import { AnimatePresence } from 'framer-motion';
 
 //TODO: 404 error catching
 function App() {
-  const location = useLocation();
+const location = useLocation();
 
   return (
     <div className="App">
