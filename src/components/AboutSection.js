@@ -26,7 +26,12 @@ function AboutSection() {
         <motion.button variants={fade}> LINK </motion.button>
       </DescriptionStyle>
       <ImageStyle> 
-        <motion.img variants={photoAnim} src={home1} alt="landing page profile pic"/>
+        <motion.img 
+        variants={photoAnim} 
+        initial="hidden"
+        animate="show"
+        src={home1} 
+        alt="landing page profile pic"/>
       </ImageStyle>
       <Wave />
     </AboutStyle>

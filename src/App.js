@@ -7,6 +7,7 @@ import MovieDetail from './pages/MovieDetail';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 
+
 //TODO: 404 error catching
 function App() {
 const location = useLocation();

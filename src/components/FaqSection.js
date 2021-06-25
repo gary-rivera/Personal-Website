@@ -1,34 +1,46 @@
 import styled from "styled-components";
 import { AboutStyle } from '../styles';
+import { useState } from 'react';
+import Toggle from './Toggle';
+import { AnimateSharedLayout } from 'framer-motion';
+import { useScroll } from "./useScroll";
+import { scrollReveal } from '../animation'
 
 function FaqSection() {
+  const [element, controls] = useScroll();
+
   return (
-    <Faq>
+    <Faq
+      variants={scrollReveal}
+      initial="hidden"
+      animate={controls}
+      ref={element}
+    >
       <h2> Any Questions <span>FAQ</span></h2>
-      <div className="question">
-        <h4> How do I start?</h4>
-        <div className="answer">
-          <div className="faq-line"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>    
-      <div className="question">
-        <h4> Different Payment Methods?</h4>
-        <div className="answer">
-        <div className="faq-line"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
-      <div className="question">
-        <h4> What Products Are Offered?</h4>
-        <div className="answer">
-        <div className="faq-line"></div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.</p>
-          <p>Lorem ipsum dolor sit amet.</p>
-        </div>
-      </div>
+      <AnimateSharedLayout>
+        <Toggle title="How Do I Start?">
+          <div className="answer">
+            <p>Lorem ipsum dolor sit amet.</p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.
+            </p>
+          </div>
+        </Toggle>
+        <Toggle title="Daily Schedule">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet.</p>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.
+              </p>
+            </div>
+        </Toggle>
+        <Toggle title="What Products Do You Offer?">
+            <div className="answer">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.</p>
+              <p>Lorem ipsum dolor sit amet.</p>
+            </div>
+        </Toggle>
+      </AnimateSharedLayout>
     </Faq>
   )
 };

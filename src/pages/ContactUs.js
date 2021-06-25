@@ -2,19 +2,47 @@ import styled from 'styled-components';
 //animations
 import { motion } from 'framer-motion';
 import { pageAnimation, titleAnim } from "../animation"
+import ScrollTop from '../components/ScrollTop';
 
 
 function ContactUs() {
   return (
-    <motion.div
+    <ContactStyle
       variants={pageAnimation}
       initial="hidden"
       animate="show"
       exit="exit"
       style={{background: "#fff"}}
     > 
-      <h1> Hello</h1>
-    </motion.div>
+      <Title>
+        <Hide>
+          <motion.h2
+            variants={titleAnim}
+          > Get in touch</motion.h2>
+        </Hide>
+      </Title>
+      <div>
+        <Hide>
+          <Social variants={titleAnim}>
+            <Circle/>
+            <h2> Send an email</h2>
+          </Social>
+        </Hide>
+        <Hide>
+          <Social variants={titleAnim}>
+            <Circle/>
+            <h2> Send us a message</h2>
+          </Social>
+        </Hide>
+        <Hide>
+          <Social variants={titleAnim}>
+            <Circle/>
+            <h2> Social Media</h2>
+          </Social>
+        </Hide>
+      </div>
+      <ScrollTop/>
+    </ContactStyle>
   )
 }
 

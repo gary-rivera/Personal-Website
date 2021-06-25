@@ -1,24 +1,40 @@
+// services icons
 import clock from "../img/clock.svg";
 import diaphragm from "../img/diaphragm.svg";
 import money from "../img/money.svg";
-// import teamwork from "../img/teamwork.svg";
+import teamwork from "../img/teamwork.svg";
 import home2 from "../img/home2.png";
 //Styles
 import { AboutStyle, DescriptionStyle , ImageStyle } from '../styles.js';
 import styled from "styled-components";
-// import { scrollReveal } from "../animation";
-// import { useScroll } from "./useScroll";
+import { scrollReveal } from "../animation";
+import { useScroll } from "./useScroll";
+
+
 
 function ServicesSection() {
-  return (
-    <ServicesStyle>
-      <DescriptionStyle>
+  const [element, controls] = useScroll();
 
-      <h2>High <span> quality</span> services</h2>
+  return (
+    <ServicesStyle
+      variants={scrollReveal}
+      initial="hidden"
+      animate={controls}
+      ref={element}
+    >
+      <DescriptionStyle>
+        <h2>High <span> quality</span> services</h2>
         <CardsStyle>
           <CardStyle>
             <div className="icon">
               <img src={clock} alt="clock"/>
+              <h3> Sub-Title</h3>
+            </div>
+            <p>Lorem ipsum dolor sit amet.</p>
+          </CardStyle>
+          <CardStyle>
+            <div className="icon">
+              <img src={teamwork} alt="teamwork"/>
               <h3> Sub-Title</h3>
             </div>
             <p>Lorem ipsum dolor sit amet.</p>
@@ -71,7 +87,7 @@ const CardStyle = styled.div`
     display: flex;
     align-items: center;
     h3 {
-      margin-left: 1rem;
+      /* margin-left: 1rem; */
       background: white;
       color: black;
       padding: 1rem;
