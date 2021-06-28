@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 import { pageAnimation } from "../animation"
 
 
-function MovieDetail() {
+function ProjectDetails() {
   const history = useHistory();
   const url = history.location.pathname;
 
@@ -116,4 +116,4 @@ const Award = ({ title, description }) => {
   );
 };
 
-export default MovieDetail;
+export default ProjectDetails;

@@ -1,5 +1,5 @@
-import home1 from "../img/home1.png";
 //Styling
+import styled from "styled-components";
 import { AboutStyle, DescriptionStyle , ImageStyle, HideStyle } from '../styles.js';
 import { motion } from "framer-motion";
 import { titleAnim, fade, photoAnim } from '../animation'
@@ -7,33 +7,32 @@ import Wave from './Wave'
 
 function AboutSection() {
   return (
-    <AboutStyle>
+    <AboutStyle id="about">
       <DescriptionStyle>
         <motion.div className="title"> 
           <HideStyle>
             <motion.h2 variants={titleAnim}> 
-              We work to make
+              Gary <span>Rivera</span>
             </motion.h2>
           </HideStyle>
           <HideStyle>
-            <motion.h2 variants={titleAnim}> your <span> dreams </span>come</motion.h2>
-          </HideStyle>
-          <HideStyle>
-            <motion.h2 variants={titleAnim}> true</motion.h2>
+            <motion.h3 variants={titleAnim}><span> Software</span> Developer</motion.h3>
           </HideStyle>
         </motion.div>
-        <motion.p variants={fade}> LINK to resume</motion.p>
-        <motion.button variants={fade}> LINK </motion.button>
+        <motion.p >
+        I'm a software engineer who loves React and creative problem solving. I've just graduated from <span> Rithm School</span> and actively looking for my next team to contribute to!
+        </motion.p>
+        <motion.button
+          onClick = {(evt) => {
+            evt.preventDefault();
+            window.open('/resume.pdf')
+          }}
+          variants={fade}
+        >
+          View Resume
+        </motion.button>
       </DescriptionStyle>
-      <ImageStyle> 
-        <motion.img 
-        variants={photoAnim} 
-        initial="hidden"
-        animate="show"
-        src={home1} 
-        alt="landing page profile pic"/>
-      </ImageStyle>
-      <Wave />
+      {/* <Wave /> */}
     </AboutStyle>
   )
 }

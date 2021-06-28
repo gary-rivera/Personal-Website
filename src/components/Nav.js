@@ -8,10 +8,10 @@ function Nav() {
   const { pathname } = useLocation();
   return (
     <NavStyle>
-      <h1> <Link to="/" id="logo">Capture</Link></h1>
+      <h1> <Link to="/" id="logo">@GaryDevelops</Link></h1>
       <ul>
         <li>
-          <Link to="/"> 1. About Us</Link>
+          <Link to="/">About</Link>
           <Line
             transition={{duration: 0.75}}
             initial={{ width: "0%" }}
@@ -19,7 +19,7 @@ function Nav() {
           />
         </li>
         <li>
-          <Link to="/work"> 2. Our Work</Link>
+          <Link to="/work">Portfolio</Link>
           <Line
             transition={{duration: 0.75}}
             initial={{ width: "0%" }}
@@ -27,7 +27,7 @@ function Nav() {
           />
         </li>
         <li>
-          <Link to="/contact"> 1. Contact Us</Link>
+          <Link to="/contact">Connect</Link>
           <Line
             transition={{duration: 0.75}}
             initial={{ width: "0%" }}
@@ -65,7 +65,7 @@ const NavStyle = styled.nav`
 
   #logo {
     font-size: 1.5rem;
-    font-family: "Lobster", cursive;
+    font-family: 'Dancing Script', cursive;
     font-weight: lighter;
   }
 
@@ -94,7 +94,7 @@ const NavStyle = styled.nav`
 
 const Line = styled(motion.div)`
   height: 0.3rem;
-  background: #23d997;
+  background: #00695C;
   width: 0%;
   position: absolute;
   bottom: -80%;

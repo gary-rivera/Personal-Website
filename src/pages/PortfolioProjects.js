@@ -9,10 +9,10 @@ import goodtimes from '../img/goodtimes-small.png';
 //animations
 import { motion } from 'framer-motion';
 import { fade, photoAnim, pageAnimation, lineAnim, slider, sliderContainer } from "../animation";
-import { useScroll } from '../components/useScroll';
-import ScrollTop from '../components/ScrollTop';
+import { useScroll } from '../utils/useScroll';
+import ScrollTop from '../utils/ScrollTop';
 
-function OurWork() {
+function PortfolioProjects() {
   const [element1, controls1] = useScroll();
   const [element2, controls2] = useScroll();
 
@@ -133,4 +133,4 @@ const Frame4 = styled(Frame1)`
   background: #8effa0;
 `;
 
-export default OurWork;
+export default PortfolioProjects;

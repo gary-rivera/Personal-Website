@@ -22,16 +22,18 @@ body {
 
 button {
   font-weight: bold;
+  border-radius: 10px;
+  margin: 10px 0px;
   font-size: 1.1.rem;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 3px solid #23d997;
+  border: 3px solid #00695C;
   background: transparent;
   color: white;
   transition: all 0.5s ease;
   font-family: 'Inter', sans-serif;
   &:hover {
-    background-color: #23d997;
+    background-color: #00695C;
     color: white;
   }
 }
@@ -43,6 +45,8 @@ h2 {
 
 h3 {
   color: white;
+  font-size: 2rem;
+  
 }
 
 h4 {
@@ -56,7 +60,7 @@ a {
 
 span {
   font-weight: bold;
-  color: #23d997;
+  color: #00695C;
 }
 
 p {
