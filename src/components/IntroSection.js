@@ -21,6 +21,11 @@ function IntroSection() {
             </motion.h3>
           </HideStyle>
         </motion.div>
+        <HideStyle>
+          <motion.p>
+            I'm a Boston-based software engineer who specializes in building (and occasionally designing) exceptional digital experiences. Currently, I'm an engineer at Upstatement focused on building accessible, human-centered products.
+          </motion.p>
+        </HideStyle>
         <motion.button onClick = {(evt) => {
             evt.preventDefault();
             window.open('/resume.pdf')

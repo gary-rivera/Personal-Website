@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Nav from './components/Nav';
 import Main from './pages/Main';
 import PortfolioProjects from './pages/PortfolioProjects';
@@ -11,6 +12,10 @@ import { AnimatePresence } from 'framer-motion';
 //TODO: 404 error catching
 function App() {
   const location = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div className="App">
