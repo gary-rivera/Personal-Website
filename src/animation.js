@@ -20,6 +20,29 @@ export const pageAnimation = {
   },
 };
 
+export const discAnimation = {
+  hidden: {
+    opacity: 0,
+    y: -25,
+  },
+  show: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      // when: "beforeChildren",
+      // staggerChildren: 0.25,
+    },
+  },
+  exit: {
+    y: -75,
+    opacity: 0,
+    transition: {
+      duration: 0.5,
+    },
+  },
+}
+
 export const titleAnim = {
   hidden: { y: 200 },
   show: {
@@ -45,14 +68,6 @@ export const photoAnim = {
       ease: "easeOut",
       duration: 0.75,
     },
-  },
-};
-
-export const lineAnim = {
-  hidden: { width: "0%" },
-  show: {
-    width: "100%",
-    transition: { duration: 1 },
   },
 };
 

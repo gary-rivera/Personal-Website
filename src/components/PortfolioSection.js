@@ -1,9 +1,10 @@
 import Project from "./Project";
 import { motion } from "framer-motion";
 import SectionTitle from "../utils/SectionTitle";
+import UnderMaintenance from "../utils/UnderMaintenance";
 
 //Styles
-import { AboutStyle, DescriptionStyle , ImageStyle, HideStyle } from '../styles.js';
+import { AboutStyle, DescriptionStyle, HideStyle } from '../styles.js';
 import { titleAnim } from "../animation";
 import styled from "styled-components";
 import { scrollReveal } from "../animation";
@@ -14,6 +15,7 @@ function PortfolioSection() {
 
   return (
     <PortfolioStyle
+      id="portfolio"
       variants={scrollReveal}
       initial="hidden"
       animate={controls}
@@ -25,9 +27,10 @@ function PortfolioSection() {
             <SectionTitle title="Portfolio" index="2"/>
           </motion.h2>
         </HideStyle>
-        <CardsStyle>
+        <UnderMaintenance />
+        {/* <CardsStyle>
           <Project />
-        </CardsStyle>
+        </CardsStyle> */}
       </DescriptionStyle>
     </PortfolioStyle>
   )

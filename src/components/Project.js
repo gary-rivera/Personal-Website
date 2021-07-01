@@ -82,7 +82,9 @@ const ProjectStyle = styled.div`
 
   .description {
     /* appearance  */
-    background: rgba(82,183,136, 0.35);
+    background: rgba(168, 219, 168, 0.35);
+    /* background: rgba(82,183,136, 0.35); */
+
     border-radius: 5px;
     padding: 0;
     height: 45%;

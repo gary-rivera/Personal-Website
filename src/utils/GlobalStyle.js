@@ -12,28 +12,28 @@ html {
   @media (max-width: 1700px){
     font-size: 75%
   }
+  background: #1b1b1b;
 }
 
 body {
-  background: #1b1b1b;
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
 button {
-  font-weight: bold;
+  border: 3px solid rgba(82,183,136, 1.0) !important;
   border-radius: 10px;
+  font-weight: bold;
   margin: 10px 0px;
   font-size: 1.1.rem;
   cursor: pointer;
   padding: 1rem 2rem;
-  border: 3px solid #52b788;
   background: transparent;
   color: white;
   transition: all 0.5s ease;
   font-family: 'Inter', sans-serif;
   &:hover {
-    background-color: #52b788;
+    background-color: rgba(82,183,136, 1.0);
     color: white;
   }
 }
@@ -73,7 +73,7 @@ a {
 
 span {
   font-weight: bold;
-  color: #52b788;
+  color: rgb(82,183,136);
 }
 
 p {

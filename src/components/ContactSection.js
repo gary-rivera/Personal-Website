@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import SectionTitle from "../utils/SectionTitle";
+import UnderMaintenance from "../utils/UnderMaintenance"
 import { AboutStyle } from '../styles';
 import { useState } from 'react';
 import Toggle from '../utils/Toggle';
@@ -10,24 +12,27 @@ function FaqSection() {
   const [element, controls] = useScroll();
 
   return (
-    <Faq
+    <ContactStyle
+      id="contact"
       variants={scrollReveal}
       initial="hidden"
       animate={controls}
       ref={element}
     >
-      <h2> Any Questions <span>FAQ</span></h2>
+      <SectionTitle title="Contact" index="3" />
+      <UnderMaintenance />
+      {/* <h2> Any Questions <span>FAQ</span></h2>
       <AnimateSharedLayout>
-        <Toggle title="How Do I Start?">
-          <div className="answer">
+        <Toggle title="1">
+          <div className="detail">
             <p>Lorem ipsum dolor sit amet.</p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.
             </p>
           </div>
         </Toggle>
-        <Toggle title="Daily Schedule">
-            <div className="answer">
+        <Toggle title="2">
+            <div className="detail">
               <p>Lorem ipsum dolor sit amet.</p>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.
@@ -35,17 +40,17 @@ function FaqSection() {
             </div>
         </Toggle>
         <Toggle title="What Products Do You Offer?">
-            <div className="answer">
+            <div className="detail">
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, numquam.</p>
               <p>Lorem ipsum dolor sit amet.</p>
             </div>
         </Toggle>
-      </AnimateSharedLayout>
-    </Faq>
+      </AnimateSharedLayout> */}
+    </ContactStyle>
   )
 };
 
-const Faq = styled(AboutStyle)`
+const ContactStyle = styled(AboutStyle)`
   display: block;
   span {
     display: block;
@@ -64,7 +69,7 @@ const Faq = styled(AboutStyle)`
     padding: 3rem 0rem;
     cursor: pointer;
   }
-  .answer {
+  .detail {
     padding: 2rem 0rem;
     p {
       padding: 1rem 0rem;

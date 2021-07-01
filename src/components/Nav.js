@@ -1,28 +1,21 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
 
 
 function Nav() {
-  const { pathname } = useLocation();
   return (
     <NavStyle>
       <h1> <Link to="/" id="logo">@GaryDevelops</Link></h1>
       <ul>
         <li>
-          <Link to="/"><span id="alt_font">01. </span>About</Link>
+          <Link to="/#about"><span id="alt_font">01. </span>About</Link>
         </li>
         <li>
-          <Link to="/work"><span id="alt_font">02. </span>Portfolio</Link>
+          <Link to="/#portfolio"><span id="alt_font">02. </span>Portfolio</Link>
         </li>
         <li>
-          <Link to="/contact"><span id="alt_font">03. </span>Connect</Link>
-          <Line
-            transition={{duration: 0.75}}
-            initial={{ width: "0%" }}
-            animate={{ width: pathname.startsWith("/contact") ? "50%" : "0%" }}
-          />
+          <Link to="/#contact"><span id="alt_font">03. </span>Connect</Link>
         </li>
       </ul> 
     </NavStyle>

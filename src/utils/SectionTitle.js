@@ -3,18 +3,17 @@ import styled from "styled-components";
 
 function SectionTitle(props) {
   const {title} = props;
-  console.log(title.toLowerCase())
 
   return (     
     <TitleStyle>
       <LineStyle />
-        <span id={props.title.toLowerCase()}>0{props.index}. </span><h2>{props.title}</h2>
+        <span>0{props.index}. </span><h2>{props.title}</h2>
         <LineStyle />
     </TitleStyle>
   )
 }
 
-const TitleStyle = styled.div`
+const TitleStyle = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -30,7 +29,7 @@ const TitleStyle = styled.div`
 
 const LineStyle = styled.div`
   width: 40%;
-  border-top: 1px solid rgba(255, 255, 255, 0.25); 
+  border-top: 1px solid rgba(255, 255, 255, 1); 
   margin: 0rem 1rem;
 `;
 

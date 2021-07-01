@@ -1,17 +1,14 @@
 import SectionTitle from "../utils/SectionTitle";
-import Project from "./Project";
+import profilePic from '../img/profile_pic.jpeg'
+import UnderMaintenance from '../utils/UnderMaintenance'
 
 //Styling
 import styled from "styled-components";
-import { AboutStyle, DescriptionStyle , ImageStyle, HideStyle } from '../styles.js';
-import { motion } from "framer-motion";
-import { titleAnim, fade, photoAnim, scrollReveal } from '../animation'
+import { AboutStyle, DescriptionStyle /*, ImageStyle, HideStyle*/ } from '../styles.js';
+// import { motion } from "framer-motion";
+import { /*titleAnim, fade, photoAnim,*/ scrollReveal } from '../animation'
 import { useScroll } from "../utils/useScroll";
-import Wave from './Wave'
-
-
-//Styles
-
+// import Wave from './Wave'
 
 
 function AboutSection() {
@@ -25,63 +22,65 @@ function AboutSection() {
       animate={controls}
       ref={element}
     >
-      <AboutMeStyle>
+      <MaintenanceStyle id="HERE_I_AM">
         <SectionTitle title="About" index="1"/>
-        <AboutTextStyle>
+        <UnderMaintenance className="maintenance-icon" />
+        {/* <AboutContainerStyle id="hereIAm">
+          <TextStyle>
           <motion.p>
-            Currently looking forward to starting at Rithm School, an intensive software engineering program that focuses on developing career-ready graduates.
-            <br/>
-            In January 2021 I left my long-time role within the veterinary medicine field to fully commit to schooling. During my time there I started as a receptionist, progressed to medical billing, and eventually managed the hospital's medical equipment inventory. And that growth was due in large part to my affinity for problem-solving.
-            <br/>
-            I’ve always believed there are never enough ways to solve a problem and I find joy in providing unique perspectives to resolutions. It was this philosophy that helped me transition to becoming a programmer. My passion for understanding complex concepts and how to creatively apply those concepts only continues to grow the deeper I dive into the world of programming.
-            <br/>
-            As for now, I look forward to honing my skills as a software engineer with Rithm School and ultimately continuing to develop my craft with any company ready to give me a chance. If you’d like to know more or just chat about all-things-programming please don’t hesitate to connect with me at a.gary.rivera@gmail.com.
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod dicta deleniti eos unde nobis esse, cupiditate molestias deserunt nemo. Repellat officiis, reprehenderit mollitia voluptatem quasi animi inventore doloremque architecto error aliquid nihil reiciendis. 
+          <br/>
+          Fugit fuga quae optio magnam commodi laborum nobis est quas, consequatur alias quidem, aliquam modi, eaque laboriosam debitis sequi repudiandae amet. Voluptatem nulla porro animi dicta laudantium ducimus eos atque magni, assumenda recusandae quae maxime vitae temporibus labore alias illo consequatur expedita amet sequi fugiat quaerat ex qui autem quis! 
+          <br/>
+          Vel officiis laboriosam molestias expedita nihil, recusandae aliquid temporibus nulla, totam quisquam sint in sequi, possimus maiores!
           </motion.p>
-        </AboutTextStyle>
-      </AboutMeStyle>
-      {/* <Wave /> */}
+          <ul>
+          <li>Javascript (ES6+)</li>
+          <li>React.js (v17.0.2)</li>
+          <li>Node.js</li>
+          <li>Python</li>
+          <li>Flask</li>
+          <li>Elm</li>
+          </ul>
+          </TextStyle>
+          <ImageStyle>
+          <img src={profilePic} alt="profile portrait"/>
+          </ImageStyle>
+        </AboutContainerStyle> */}
+      </MaintenanceStyle>
     </AboutStyle>
   )
 }
 
-const AboutTextStyle = styled.div`
+const MaintenanceStyle = styled(DescriptionStyle)`
+
+`;
+
+const TextStyle = styled.div`
+  border: 1px solid rgba(255, 255, 255, 1);
   display: inline-block;
-  align-self: center;
+  
 
   /* appearance  */
-  background: rgba(82,183,136, 0.35);
+  /* background: rgba(82,183,136, 0.35); */
   border-radius: 5px;
   height: 45%;
-  width: 50vw;
+  width: 30vw;
   
   p {
-    font-size: 1em;
+    /* text */
     padding: 1.5rem;
+    font-size: 0.9rem;
+    font-weight: light;
+    color: rgba(244, 244, 244, 0.75);
   }
 `;
 
-const AboutMeStyle = styled(DescriptionStyle)`
-  display: flex;
-  flex-direction: column;
+const AboutContainerStyle = styled.div`
+  display:flex;
   justify-content: center;
+  margin: auto;
+  width: 50vw;
 `;
 
 export default AboutSection;
-
-{/* <PortfolioStyle
-variants={scrollReveal}
-initial="hidden"
-animate={controls}
-ref={element}
->
-<DescriptionStyle>
-  <HideStyle>
-    <motion.h2 id="portfolio" variants={titleAnim}>
-      <SectionTitle title="Portfolio" index="2"/>
-    </motion.h2>
-  </HideStyle>
-  <CardsStyle>
-    <Project />
-  </CardsStyle>
-</DescriptionStyle>
-</PortfolioStyle> */}
